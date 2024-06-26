@@ -1,0 +1,74 @@
+@use "@/styles/abstracts/mixins";
+
+:root {
+  --color-black: #1b1f2b;
+  --color-white: #ffffff;
+  --color-orange-100: #f8e6be;
+  --color-orange-200: #efa501;
+  --color-green-100: #e0f0e5;
+  --color-green-200: #627f7e;
+  --color-green-300: #3b7e7b;
+  --color-green-400: #286562;
+  --color-gray-300: #a6a6a6;
+  --color-gray-200: #d9dfdb;
+  --color-gray-100: #f1f3f2;
+  --color-beige-100: #f9f7f4;
+  --color-beige-200: #f4f0e9;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  font-family: var(--font-roboto, "Roboto", sans-serif);
+  color: var(--color-black);
+
+  background-color: var(--color-beige-100);
+}
+
+.main {
+  padding: 0 30px;
+
+  @include mixins.media-medium {
+    padding: 0 20px;
+  }
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

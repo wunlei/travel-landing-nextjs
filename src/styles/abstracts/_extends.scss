@@ -1,0 +1,9 @@
+@use "./mixins";
+
+%border-radius {
+  border-radius: 50px;
+
+  @include mixins.media-small {
+    border-radius: 20px;
+  }
+}
