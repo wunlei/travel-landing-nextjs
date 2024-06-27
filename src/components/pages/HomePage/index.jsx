@@ -1,5 +1,12 @@
+import Header from "@/components/commons/Header";
+
 function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <Header />
+      <main className="main"></main>
+    </>
+  );
 }
 
 export default HomePage;

@@ -1,0 +1,108 @@
+@use "@/styles/abstracts/mixins";
+
+.header {
+  padding: 29px 20px;
+  color: var(--color-white);
+}
+
+.logo-container {
+  line-height: 0;
+}
+
+.logo {
+  fill: var(--color-white);
+
+  @include mixins.media-small {
+    width: 133px;
+  }
+}
+
+.header_sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  color: var(--color-black);
+  background: rgba(243, 239, 232, 0.6);
+  backdrop-filter: blur(27px);
+
+  animation: 0.3s ease forwards show-header;
+
+  .logo {
+    fill: var(--color-black);
+  }
+
+  .page-nav__link::after {
+    background-color: var(--color-black);
+  }
+}
+
+@keyframes show-header {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.header_removed {
+  animation: 0.3s ease forwards remove-header;
+}
+
+@keyframes remove-header {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1168px;
+  margin: 0 auto;
+
+  @include mixins.media-medium {
+    max-width: 910px;
+  }
+
+  @include mixins.media-small {
+    max-width: 320px;
+  }
+}
+
+.page-nav {
+  @include mixins.media-small {
+    display: none;
+  }
+}
+
+.page-nav__list {
+  display: flex;
+  column-gap: 50px;
+
+  @include mixins.media-medium {
+    column-gap: 30px;
+  }
+}
+
+.page-nav__link {
+  position: relative;
+
+  &::after {
+    @include mixins.underline(-2px, 1px, var(--color-white));
+  }
+
+  @media (hover: hover) {
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
