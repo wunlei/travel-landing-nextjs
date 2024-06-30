@@ -1,0 +1,14 @@
+@use "@/styles/base/typography";
+
+.button {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  max-width: min-content;
+  padding: 7px 20px;
+
+  border-radius: 50px;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}

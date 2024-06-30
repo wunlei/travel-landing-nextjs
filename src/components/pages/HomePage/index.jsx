@@ -1,5 +1,6 @@
 import Header from "@/components/commons/Header";
 import HeroSection from "./HeroSection";
+import SelectTourSection from "./SelectTourSection";
 
 function HomePage() {
   return (
@@ -7,6 +8,7 @@ function HomePage() {
       <Header />
       <main className="main">
         <HeroSection/>
+        <SelectTourSection/>
       </main>
     </>
   );

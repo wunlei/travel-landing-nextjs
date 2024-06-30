@@ -1,0 +1,61 @@
+@use "@/styles/abstracts/mixins";
+
+.tour-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 10px;
+  column-gap: 30px;
+  margin-bottom: 105px;
+
+  @include mixins.media-small {
+    margin-bottom: 52px;
+  }
+
+  @include mixins.media-small {
+    column-gap: 10px;
+  }
+}
+
+.tour-tabs__btn {
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    @include mixins.underline(-5px, 2px, var(--color-black));
+  }
+
+  @media (hover: hover) {
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  @include mixins.media-small {
+    &::after {
+      bottom: -1px;
+    }
+  }
+}
+
+.tour-tabs__btn_active {
+  color: var(--color-orange-200);
+
+  &::after {
+    background-color: var(--color-orange-200);
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+.tour-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+
+  @include mixins.media-medium {
+    gap: 18px;
+  }
+}
