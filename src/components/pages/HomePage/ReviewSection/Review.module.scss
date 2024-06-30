@@ -1,0 +1,16 @@
+@use "@/styles/abstracts/mixins";
+
+.review-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+
+  @include mixins.media-medium {
+    column-gap: 18px;
+  }
+
+  @include mixins.media-small {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+}
