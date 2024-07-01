@@ -1,0 +1,15 @@
+export const galleryImages = [
+  "/img/travel/1-large.jpg",
+  "/img/travel/2-large.jpg",
+  "/img/travel/3-large.jpg",
+  "/img/travel/4-large.jpg",
+  "/img/travel/5-large.jpg",
+  "/img/travel/6-large.jpg",
+  "/img/travel/7-large.jpg",
+  "/img/travel/8-large.jpg",
+  "/img/travel/9-large.jpg",
+  "/img/travel/10-large.jpg",
+  "/img/travel/11-large.jpg",
+  "/img/travel/12-large.jpg",
+  "/img/travel/13-large.jpg",
+];
