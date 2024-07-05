@@ -1,0 +1,12 @@
+@use "@/styles/abstracts/mixins";
+
+.story-cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  width: 100%;
+
+  @include mixins.media-small {
+    row-gap: 20px;
+  }
+}

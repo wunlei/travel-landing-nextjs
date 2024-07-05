@@ -3,6 +3,7 @@ import HeroSection from "./HeroSection";
 import SelectTourSection from "./SelectTourSection";
 import ReviewSection from "./ReviewSection";
 import GallerySection from "./GallerySection";
+import StoriesSection from "./StoriesSection";
 
 function HomePage() {
   return (
@@ -13,6 +14,7 @@ function HomePage() {
         <SelectTourSection />
         <ReviewSection />
         <GallerySection/>
+        <StoriesSection/>
       </main>
     </>
   );
