@@ -4,6 +4,7 @@ import SelectTourSection from "./SelectTourSection";
 import ReviewSection from "./ReviewSection";
 import GallerySection from "./GallerySection";
 import StoriesSection from "./StoriesSection";
+import CTASection from "./CTASection";
 
 function HomePage() {
   return (
@@ -13,8 +14,9 @@ function HomePage() {
         <HeroSection />
         <SelectTourSection />
         <ReviewSection />
-        <GallerySection/>
-        <StoriesSection/>
+        <GallerySection />
+        <StoriesSection />
+        <CTASection />
       </main>
     </>
   );
