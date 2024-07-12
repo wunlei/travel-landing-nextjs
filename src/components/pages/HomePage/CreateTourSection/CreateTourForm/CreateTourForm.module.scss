@@ -1,0 +1,172 @@
+@use "@/styles/abstracts/mixins";
+
+.create-tour-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  width: 100%;
+  padding: 70px;
+
+  border-radius: 50px;
+  background-color: var(--color-white);
+
+  @include mixins.media-medium {
+    padding: 60px;
+  }
+
+  @include mixins.media-small {
+    row-gap: 31px;
+    padding: 20px;
+    padding-bottom: 40px;
+
+    border-radius: 30px;
+  }
+}
+
+.create-tour-form__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 33px;
+  column-gap: 30px;
+
+  @include mixins.media-medium {
+    column-gap: 20px;
+  }
+
+  @include mixins.media-small {
+    grid-template-columns: 1fr;
+    row-gap: 31px;
+  }
+}
+
+.create-tour-form__label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+  line-height: inherit;
+}
+
+.create-tour-form__input {
+  padding: 19px;
+
+  border: 1px solid var(--color-beige-200);
+  border-radius: 10px;
+  line-height: inherit;
+  background-color: var(--color-beige-100);
+  outline: none;
+
+  transition: background-color 0.3s ease;
+
+  &::placeholder {
+    color: var(--color-gray-300);
+  }
+
+  &:focus {
+    border-color: var(--color-gray-300);
+    background-color: var(--color-beige-200);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-beige-200);
+      cursor: pointer;
+    }
+  }
+
+  @include mixins.media-small {
+    padding: 10px;
+  }
+}
+
+.create-tour-form__textarea {
+  resize: none;
+
+  @include mixins.media-small {
+    min-height: 132px;
+  }
+}
+
+// Radio
+
+.create-tour-form__set-age {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.create-tour-form__set-age-title {
+  margin-bottom: 8px;
+}
+
+.create-tour-form__radiobtn-container {
+  display: flex;
+  column-gap: 30px;
+}
+
+.create-tour-form__link_accent {
+  color: var(--color-black);
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &:active {
+    color: var(--color-green-400);
+  }
+}
+
+.create-tour-form__btns-container {
+  display: flex;
+  column-gap: 30px;
+
+  @include mixins.media-small {
+    column-gap: 9px;
+  }
+}
+
+.create-tour-form__btn {
+  padding: 15px 71px;
+
+  border-radius: 10px;
+
+  line-height: inherit;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+
+  @include mixins.media-small {
+    padding: 12px 30px;
+  }
+}
+
+.create-tour-form__btn-submit {
+  color: var(--color-white);
+  background-color: var(--color-green-400);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-green-300);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-green-200);
+  }
+}
+
+.create-tour-form__btn-reset {
+  color: var(--color-green-400);
+  background-color: var(--color-green-100);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-gray-100);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-gray-200);
+  }
+}

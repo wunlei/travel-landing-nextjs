@@ -1,0 +1,53 @@
+@use "@/styles/abstracts/mixins";
+
+.create-tour-form__label-radiobtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.create-tour-form__radiobtn {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  border: 2px solid var(--color-black);
+  border-radius: 50%;
+  cursor: pointer;
+  appearance: none;
+
+  @include mixins.media-small {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.create-tour-form__radiobtn-title::after {
+  position: absolute;
+  top: calc(50% - 3px);
+  left: 10px;
+
+  display: block;
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background-color: var(--color-black);
+  transform: scale(0);
+
+  transition: 120ms transform ease;
+
+  content: "";
+
+  @include mixins.media-small {
+    top: calc(50% - 2px);
+    left: 8px;
+    width: 5px;
+    height: 5px;
+  }
+}
+
+.create-tour-form__radiobtn:checked + .create-tour-form__radiobtn-title::after {
+  transform: scale(2);
+}

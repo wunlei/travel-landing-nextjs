@@ -1,0 +1,23 @@
+@use "@/styles/abstracts/mixins";
+
+.create-tour-form__input-date {
+  text-transform: uppercase;
+  color: var(--color-gray-300);
+
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  &:focus {
+    color: var(--color-black);
+  }
+
+  @include mixins.media-small {
+    min-width: -webkit-fill-available;
+    padding: 8px;
+  }
+}
+
+.create-tour-form__input-date_has-value {
+  color: var(--color-black);
+}

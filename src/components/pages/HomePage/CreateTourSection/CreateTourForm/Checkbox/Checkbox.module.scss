@@ -1,0 +1,67 @@
+@use "@/styles/abstracts/mixins";
+
+.create-tour-form__label-checkbox {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+
+  color: var(--color-gray-300);
+
+  @include mixins.media-medium {
+    column-gap: 11px;
+  }
+
+  @include mixins.media-small {
+    align-items: flex-start;
+  }
+}
+
+.create-tour-form__checkbox {
+  position: relative;
+
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+
+  border: 2px solid var(--color-black);
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none;
+
+  @include mixins.media-small {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.create-tour-form__checkbox-title::after {
+  position: absolute;
+  top: calc(50% - 5px);
+  left: 6px;
+
+  width: 13px;
+  height: 10px;
+
+  background-image: url(/icons/check.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  content: "";
+  pointer-events: none;
+
+  @include mixins.media-small {
+    top: 6px;
+    left: 5px;
+
+    width: 11px;
+    height: 8px;
+  }
+}
+
+.create-tour-form__checkbox:checked + .create-tour-form__checkbox-title::after {
+  opacity: 1;
+}

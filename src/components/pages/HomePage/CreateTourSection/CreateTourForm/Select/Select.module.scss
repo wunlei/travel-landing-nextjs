@@ -1,0 +1,30 @@
+@use "@/styles/abstracts/mixins";
+
+.create-tour-form__select-container {
+  position: relative;
+}
+
+.create-tour-form__select-arrow {
+  position: absolute;
+  top: 57px;
+  right: 20px;
+  pointer-events: none;
+
+  @include mixins.media-small {
+    top: 40px;
+    right: 10px;
+  }
+}
+
+.create-tour-form__select {
+  color: var(--color-gray-300);
+  appearance: none;
+
+  &:focus {
+    color: var(--color-black);
+  }
+}
+
+.create-tour-form__select_selected {
+  color: var(--color-black);
+}
