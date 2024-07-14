@@ -1,0 +1,65 @@
+@use "@/styles/abstracts/mixins";
+
+.footer {
+  padding: 30px;
+
+  color: var(--color-gray-300);
+  background-color: var(--color-beige-200);
+
+  @include mixins.media-small {
+    padding: 21px;
+  }
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1170px;
+  margin: 0 auto;
+
+  @include mixins.media-medium {
+    max-width: 918px;
+  }
+
+  @include mixins.media-small {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 7px;
+  }
+}
+
+.contacts-list {
+  display: flex;
+  column-gap: 25px;
+
+  color: var(--color-black);
+
+  @include mixins.media-small {
+    column-gap: 15px;
+  }
+}
+
+.contacts-list__link {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  @include mixins.media-small {
+    column-gap: 1px;
+  }
+}
+
+.contacts-list__link-title {
+  position: relative;
+
+  &::after {
+    @include mixins.underline(-2px, 1px, var(--color-black));
+  }
+
+  @media (hover: hover) {
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}

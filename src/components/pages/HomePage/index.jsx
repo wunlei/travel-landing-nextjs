@@ -6,6 +6,7 @@ import GallerySection from "./GallerySection";
 import StoriesSection from "./StoriesSection";
 import CTASection from "./CTASection";
 import CreateTourSection from "./CreateTourSection";
+import Footer from "@/components/commons/Footer";
 
 function HomePage() {
   return (
@@ -20,6 +21,7 @@ function HomePage() {
         <StoriesSection />
         <CTASection />
       </main>
+      <Footer />
     </>
   );
 }
