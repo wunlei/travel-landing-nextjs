@@ -1,7 +1,7 @@
 @use "@/styles/abstracts/mixins";
 @use "@/styles/abstracts/extends";
 
-.review-card {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,7 +20,7 @@
   }
 }
 
-.card__text {
+.cardText {
   margin-bottom: 1.22em;
 
   @include mixins.media-small {
@@ -28,11 +28,11 @@
   }
 }
 
-.card__text:last-of-type {
+.cardText:last-of-type {
   margin-bottom: unset;
 }
 
-.card__footer {
+.footer {
   display: flex;
   justify-content: space-between;
   margin-top: 68px;
@@ -43,7 +43,7 @@
   }
 }
 
-.author-photo-container {
+.authorPhotoContainer {
   position: relative;
   width: 75px;
   height: 75px;
@@ -52,7 +52,7 @@
   overflow: hidden;
 }
 
-.author-photo {
+.authorPhoto {
   object-fit: cover;
 }
 
@@ -60,6 +60,6 @@
   margin-bottom: 10px;
 }
 
-.tour-name {
+.tourName {
   color: var(--color-gray-300);
 }

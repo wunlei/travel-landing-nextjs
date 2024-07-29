@@ -2,7 +2,7 @@
 @use "@/styles/abstracts/extends";
 @use "@/styles/abstracts/variables";
 
-.tour-card {
+.card {
   position: relative;
   width: 370px;
   height: 531px;
@@ -29,7 +29,7 @@
   }
 }
 
-.tour-card__bg {
+.cardBg {
   position: absolute;
   top: 0;
   left: 0;
@@ -46,19 +46,19 @@
 }
 
 @media (hover: hover) {
-  .tour-card:hover .tour-card__bg {
+  .card:hover .cardBg {
     transform: scale(1.2);
   }
 }
 
-.card__content {
+.content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
 
-.card__header {
+.header {
   padding: 50px;
 
   transition: padding 0.3s ease;
@@ -69,12 +69,12 @@
 }
 
 @media (hover: hover) and (min-width: variables.$breakpoint-medium) {
-  .tour-card:hover .card__header {
+  .card:hover .header {
     padding: 40px;
   }
 }
 
-.card__title {
+.cardTitle {
   max-width: 246px;
   margin-bottom: 15px;
 
@@ -83,15 +83,15 @@
   }
 }
 
-.card__btn {
+.cardBtn {
   margin: 43px 31px;
 
   @media (hover: hover) {
-    .tour-card:hover & {
+    .card:hover & {
       background-color: var(--color-green-400);
     }
 
-    .tour-card:active & {
+    .card:active & {
       background-color: var(--color-orange-200);
     }
   }

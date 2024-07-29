@@ -1,6 +1,6 @@
 @use "@/styles/abstracts/mixins";
 
-.create-tour-form__input-date {
+.inputDate {
   text-transform: uppercase;
   color: var(--color-gray-300);
 
@@ -18,6 +18,6 @@
   }
 }
 
-.create-tour-form__input-date_has-value {
+.inputHasValue {
   color: var(--color-black);
 }

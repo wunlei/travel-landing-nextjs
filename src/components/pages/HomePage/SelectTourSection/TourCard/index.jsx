@@ -4,17 +4,17 @@ import s from "./TourCard.module.scss";
 
 function TourCard({ title, subtitle, bgImage }) {
   return (
-    <div className={s["tour-card"]}>
+    <div className={s.card}>
       <div
-        className={s["tour-card__bg"]}
+        className={s.cardBg}
         style={{ backgroundImage: `url(${bgImage})` }}
       ></div>
-      <div className={s["card__content"]}>
-        <div className={s["card__header"]}>
-          <h3 className={cn("title-h3", s["card__title"])}>{title}</h3>
+      <div className={s.content}>
+        <div className={s.header}>
+          <h3 className={cn("title-h3", s.cardTitle)}>{title}</h3>
           <p className={cn("text_small")}>{subtitle}</p>
         </div>
-        <ButtonDetails classes={[s["card__btn"]]} />
+        <ButtonDetails classes={[s.cardBtn]} />
       </div>
     </div>
   );

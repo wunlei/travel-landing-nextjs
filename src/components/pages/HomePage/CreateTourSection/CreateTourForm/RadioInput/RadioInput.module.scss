@@ -1,13 +1,13 @@
 @use "@/styles/abstracts/mixins";
 
-.create-tour-form__label-radiobtn {
+.label {
   position: relative;
   display: flex;
   align-items: center;
   column-gap: 10px;
 }
 
-.create-tour-form__radiobtn {
+.inputRadio {
   flex-shrink: 0;
   width: 26px;
   height: 26px;
@@ -23,7 +23,7 @@
   }
 }
 
-.create-tour-form__radiobtn-title::after {
+.title::after {
   position: absolute;
   top: calc(50% - 3px);
   left: 10px;
@@ -48,6 +48,6 @@
   }
 }
 
-.create-tour-form__radiobtn:checked + .create-tour-form__radiobtn-title::after {
+.inputRadio:checked + .title::after {
   transform: scale(2);
 }

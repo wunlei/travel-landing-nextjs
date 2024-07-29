@@ -11,7 +11,7 @@ function ReviewSection() {
       subtitle="Идейные соображения высшего порядка, а также рамки и место обучения
         кадров"
     >
-      <div className={s["review-cards"]}>
+      <div className={s.cards}>
         {reviewCards.map((card) => (
           <ReviewCard
             key={card.id}

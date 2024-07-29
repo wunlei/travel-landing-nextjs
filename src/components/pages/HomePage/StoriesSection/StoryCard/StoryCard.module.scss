@@ -1,7 +1,7 @@
 @use "@/styles/abstracts/mixins";
 @use "@/styles/abstracts/extends";
 
-.story-card {
+.card {
   position: relative;
 
   display: grid;
@@ -29,13 +29,13 @@
   }
 }
 
-.story-card__title {
+.cardTitle {
   @include mixins.media-small {
     max-width: 140px;
   }
 }
 
-.story-card__bg {
+.cardBg {
   position: absolute;
   top: 0;
   left: 0;
@@ -52,20 +52,20 @@
   transition: transform 0.3s ease;
 
   @media (hover: hover) {
-    .story-card:hover & {
+    .card:hover & {
       transform: scale(1.2);
     }
   }
 }
 
-.story-card__content {
+.content {
   display: flex;
   flex-direction: column;
   row-gap: 26px;
   max-width: 554px;
 }
 
-.story-card__content-list {
+.list {
   margin: 0;
   padding-left: 30px;
 
@@ -74,29 +74,29 @@
   }
 }
 
-.story-card__footer {
+.cardFooter {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.story-card__btn {
+.cardBtn {
   position: relative;
   top: 7px;
   left: -20px;
 
   @media (hover: hover) {
-    .story-card:hover & {
+    .card:hover & {
       background-color: var(--color-green-400);
     }
 
-    .story-card:active & {
+    .card:active & {
       background-color: var(--color-orange-200);
     }
   }
 }
 
-.story-card__links {
+.cardLinks {
   display: flex;
   column-gap: 36px;
 
@@ -105,7 +105,7 @@
   }
 }
 
-.story-card__link {
+.cardLink {
   @media (hover: hover) {
     &:hover {
       text-decoration: underline;

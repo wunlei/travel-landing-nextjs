@@ -5,7 +5,7 @@
   color: var(--color-white);
 }
 
-.logo-container {
+.logoContainer {
   line-height: 0;
 }
 
@@ -17,7 +17,7 @@
   }
 }
 
-.header_sticky {
+.headerSticky {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -32,7 +32,7 @@
     fill: var(--color-black);
   }
 
-  .page-nav__link::after {
+  .navLink::after {
     background-color: var(--color-black);
   }
 }
@@ -47,7 +47,7 @@
   }
 }
 
-.header_removed {
+.headerRemoved {
   animation: 0.3s ease forwards remove-header;
 }
 
@@ -77,13 +77,13 @@
   }
 }
 
-.page-nav {
+.pageNav {
   @include mixins.media-small {
     display: none;
   }
 }
 
-.page-nav__list {
+.navList {
   display: flex;
   column-gap: 50px;
 
@@ -92,7 +92,7 @@
   }
 }
 
-.page-nav__link {
+.navLink {
   position: relative;
 
   &::after {

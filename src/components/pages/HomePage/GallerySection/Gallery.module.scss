@@ -2,7 +2,7 @@
 @use "@/styles/abstracts/mixins";
 @use "@/styles/abstracts/extends";
 
-.section-photos {
+.container {
   max-width: 1860px;
 
   @include mixins.media-medium {
@@ -29,7 +29,7 @@
   }
 }
 
-.gallery__img {
+.galleryImg {
   position: relative;
   display: block;
   grid-column: span 5;
@@ -53,35 +53,35 @@
 }
 
 @for $i from 5 through 9 {
-  .gallery__img:nth-child(9n + #{$i}) {
+  .galleryImg:nth-child(9n + #{$i}) {
     grid-column: span 4;
   }
 }
 
 @media (max-width: variables.$breakpoint-medium) {
-  .gallery__img:nth-child(18n + 2),
-  .gallery__img:nth-child(18n + 13),
-  .gallery__img:nth-child(9n + 7) {
+  .galleryImg:nth-child(18n + 2),
+  .galleryImg:nth-child(18n + 13),
+  .galleryImg:nth-child(9n + 7) {
     display: none;
   }
 
   @for $i from 5 through 9 {
-    .gallery__img:nth-child(9n + #{$i}) {
+    .galleryImg:nth-child(9n + #{$i}) {
       grid-column: span 3;
     }
   }
 }
 
 @media (max-width: variables.$breakpoint-small) {
-  .gallery__img:nth-child(1) {
+  .galleryImg:nth-child(1) {
     padding-right: 4px;
   }
-  .gallery__img:nth-child(4) {
+  .galleryImg:nth-child(4) {
     padding-left: 4px;
   }
 
   @for $i from 5 through 9 {
-    .gallery__img:nth-child(9n + #{$i}) {
+    .galleryImg:nth-child(9n + #{$i}) {
       grid-column: span 2;
     }
   }
@@ -89,7 +89,7 @@
   $pictures: 3, 6, 7;
 
   @each $el in $pictures {
-    .gallery__img:nth-child(9n + #{$el}) {
+    .galleryImg:nth-child(9n + #{$el}) {
       display: none;
     }
   }

@@ -2,18 +2,16 @@ import s from "./RadioInput.module.scss";
 
 function RadioInput({ label, checked, name, value, onChange }) {
   return (
-    <label className={s["create-tour-form__label-radiobtn"]}>
+    <label className={s.label}>
       <input
-        className={s["create-tour-form__radiobtn"]}
+        className={s.inputRadio}
         type="radio"
         name={name}
         checked={checked === value}
         value={value}
         onChange={onChange}
       />
-      <span className={s["create-tour-form__radiobtn-title"]}>
-        {label}
-      </span>
+      <span className={s.title}>{label}</span>
     </label>
   );
 }

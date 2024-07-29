@@ -5,20 +5,18 @@ import s from "./StoryCard.module.scss";
 
 function StoryCard({ title, links, content, background }) {
   return (
-    <div className={s["story-card"]}>
+    <div className={s.card}>
       <div
-        className={s["story-card__bg"]}
+        className={s.cardBg}
         style={{ backgroundImage: `url(${background})` }}
       ></div>
-      <h3 className={cn("title-h3", s["story-card__title"])}>{title}</h3>
-      <div className={cn(s["story-card__content"], "text_normal")}>
+      <h3 className={cn("title-h3", s.cardTitle)}>{title}</h3>
+      <div className={cn(s.content, "text_normal")}>
         {content.map((el, index) => (
           <Fragment key={index}>
-            {el.type === "text" && (
-              <p className={s["story-card__content-text"]}>{el.content}</p>
-            )}
+            {el.type === "text" && <p>{el.content}</p>}
             {el.type === "list" && (
-              <ul className={s["story-card__content-list"]}>
+              <ul className={s.list}>
                 {el.content.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -27,16 +25,16 @@ function StoryCard({ title, links, content, background }) {
           </Fragment>
         ))}
       </div>
-      <div className={s["story-card__footer"]}>
-        <ButtonDetails classes={[s["story-card__btn"], "text_big"]} />
-        <ul className={cn("list", "text_normal", s["story-card__links"])}>
+      <div className={s.cardFooter}>
+        <ButtonDetails classes={[s.cardBtn, "text_big"]} />
+        <ul className={cn("list", "text_normal", s.cardLinks)}>
           {links.map((link) => (
             <li key={link.title}>
               <a
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={s["story-card__link"]}
+                className={s.cardLink}
               >
                 {link.title}
               </a>

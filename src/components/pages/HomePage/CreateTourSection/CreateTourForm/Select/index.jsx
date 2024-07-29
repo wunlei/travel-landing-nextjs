@@ -15,12 +15,12 @@ function SelectElement({
   onChange,
 }) {
   return (
-    <div className={s["create-tour-form__select-container"]}>
+    <div className={s.container}>
       <label className={cn(labelClasses)}>
         {title}
         <select
           className={cn(
-            s["create-tour-form__select"],
+            s.select,
             {
               [activeSelectClass]: Boolean(value),
             },
@@ -40,7 +40,7 @@ function SelectElement({
           ))}
         </select>
       </label>
-      <ArrowDown className={s["create-tour-form__select-arrow"]} />
+      <ArrowDown className={s.selectArrow} />
     </div>
   );
 }

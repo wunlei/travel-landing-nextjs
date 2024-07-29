@@ -4,23 +4,21 @@ import s from "./ReviewCard.module.scss";
 
 function ReviewCard({ reviewContent, author, authorPhoto, tourName }) {
   return (
-    <div className={s["review-card"]}>
+    <div className={s.card}>
       {reviewContent.map((text) => (
-        <p key={text} className={cn(s["card__text"], "text_big")}>
+        <p key={text} className={cn(s.cardText, "text_big")}>
           {text}
         </p>
       ))}
 
-      <div className={s["card__footer"]}>
+      <div className={s.footer}>
         <div>
-          <h3 className={cn(s["author"], "title-h3")}>{author}</h3>
-          <p className={cn(s["tour-name"], "text_small")}>
-            Тур: {tourName}
-          </p>
+          <h3 className={cn(s.author, "title-h3")}>{author}</h3>
+          <p className={cn(s.tourName, "text_small")}>Тур: {tourName}</p>
         </div>
-        <picture className={s["author-photo-container"]}>
+        <picture className={s.authorPhotoContainer}>
           <Image
-            className={s["author-photo"]}
+            className={s.authorPhoto}
             src={authorPhoto}
             alt="photo"
             fill

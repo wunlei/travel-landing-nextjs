@@ -11,7 +11,7 @@ function StoriesSection() {
       subtitle="Идейные соображения высшего порядка, а также рамки и место обучения
         кадров"
     >
-      <div className={s["story-cards"]}>
+      <div className={s.cards}>
         {storyCards.map((card) => (
           <StoryCard
             key={card.id}

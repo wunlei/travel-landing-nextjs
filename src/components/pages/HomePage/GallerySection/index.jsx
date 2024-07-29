@@ -6,14 +6,14 @@ import s from "./Gallery.module.scss";
 function GallerySection() {
   return (
     <Section
-      classes={[s["section-photos"]]}
+      classes={[s.container]}
       title="Фотографии путешествий"
       subtitle="Идейные соображения высшего порядка, а также рамки и место обучения
         кадров"
     >
-      <div className={s["gallery"]}>
+      <div className={s.gallery}>
         {galleryImages.map((image) => (
-          <picture key={image} className={s["gallery__img"]}>
+          <picture key={image} className={s.galleryImg}>
             <Image
               src={image}
               alt="photo"

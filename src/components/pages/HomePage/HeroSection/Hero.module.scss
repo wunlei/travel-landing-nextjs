@@ -1,6 +1,6 @@
 @use "@/styles/abstracts/mixins";
 
-.section-hero {
+.container {
   row-gap: 50px;
   margin-top: 0;
   padding-top: 119px;
@@ -20,7 +20,7 @@
   }
 }
 
-.hero-bg {
+.bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -47,7 +47,7 @@
   }
 }
 
-.section-hero__subtitle {
+.subtitle {
   max-width: 562px;
 
   @include mixins.media-medium {
@@ -59,7 +59,7 @@
   }
 }
 
-.section-hero__btn {
+.btn {
   padding: 5px 20px;
   border-radius: 10px;
 

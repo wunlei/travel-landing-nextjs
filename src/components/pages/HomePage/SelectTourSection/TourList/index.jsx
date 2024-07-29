@@ -10,12 +10,12 @@ function TourList() {
 
   return (
     <>
-      <ul className={cn("list", s["tour-tabs"])}>
+      <ul className={cn("list", s.tabs)}>
         {tourTabs.map((tab) => (
           <li key={tab}>
             <button
-              className={cn(s["tour-tabs__btn"], "text_big", {
-                [s["tour-tabs__btn_active"]]: activeTab === tab,
+              className={cn(s.tabsBtn, "text_big", {
+                [s.tabsBtnActive]: activeTab === tab,
               })}
               onClick={() => setActiveTab(tab)}
             >
@@ -24,7 +24,7 @@ function TourList() {
           </li>
         ))}
       </ul>
-      <div className={s["tour-cards"]}>
+      <div className={s.cardsContainer}>
         {tourCards.map((card) => (
           <TourCard
             key={card.id}

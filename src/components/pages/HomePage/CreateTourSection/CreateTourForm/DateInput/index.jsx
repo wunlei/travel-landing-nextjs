@@ -20,7 +20,7 @@ function DateInput({
       label={label}
       inputClasses={[
         cn(
-          s["create-tour-form__input-date"],
+          s.inputDate,
           { [activeDateInputClass]: Boolean(value) },
           inputClasses,
         ),

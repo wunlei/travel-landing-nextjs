@@ -47,14 +47,14 @@ function CreateTourForm() {
 
   return (
     <form
-      className={cn("text_normal", s["create-tour-form"])}
+      className={cn("text_normal", s.form)}
       action="#"
       method="post"
-      id="create-tour-form"
+      id="form"
       onSubmit={handleSubmit}
       onReset={handleReset}
     >
-      <div className={s["create-tour-form__container"]}>
+      <div className={s.container}>
         <InputElement
           label="Имя"
           type="text"
@@ -121,7 +121,7 @@ function CreateTourForm() {
       <label className={labelClass}>
         Комментарий
         <textarea
-          className={cn(inputClass, s["create-tour-form__textarea"])}
+          className={cn(inputClass, s.textarea)}
           name="commentary"
           value={commentary}
           rows={4}
@@ -129,11 +129,9 @@ function CreateTourForm() {
         ></textarea>
       </label>
 
-      <fieldset className={s["create-tour-form__set-age"]}>
-        <legend className={s["create-tour-form__set-age-title"]}>
-          Вам есть 18 лет?
-        </legend>
-        <div className={s["create-tour-form__radiobtn-container"]}>
+      <fieldset className={s.setAgeContainer}>
+        <legend className={s.setAgeContainerTitle}>Вам есть 18 лет?</legend>
+        <div className={s.radiobtnContainer}>
           <RadioInput
             label="Да"
             name="adult"
@@ -158,32 +156,16 @@ function CreateTourForm() {
         onChange={(e) => setAgreementValue(e.target.checked)}
       >
         Нажимая кнопку, я принимаю условия{" "}
-        <a
-          className={s["create-tour-form__link_accent"]}
-          href="#"
-          target="_blank"
-        >
+        <a className={s.linkAccent} href="#" target="_blank">
           Лицензионного договора
         </a>
       </Checkbox>
 
-      <div className={cn(s["create-tour-form__btns-container"])}>
-        <button
-          className={cn(
-            s["create-tour-form__btn"],
-            s["create-tour-form__btn-submit"],
-          )}
-          type="submit"
-        >
+      <div className={s.btnsContainer}>
+        <button className={cn(s.btnForm, s.btnFormSubmit)} type="submit">
           Найти тур
         </button>
-        <button
-          className={cn(
-            s["create-tour-form__btn"],
-            s["create-tour-form__btn-reset"],
-          )}
-          type="reset"
-        >
+        <button className={cn(s.btnForm, s.btnFormReset)} type="reset">
           Сбросить
         </button>
       </div>

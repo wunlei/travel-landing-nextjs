@@ -1,6 +1,6 @@
 @use "@/styles/abstracts/mixins";
 
-.create-tour-form {
+.form {
   display: flex;
   flex-direction: column;
   row-gap: 32px;
@@ -23,7 +23,7 @@
   }
 }
 
-.create-tour-form__container {
+.container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 33px;
@@ -39,14 +39,14 @@
   }
 }
 
-.create-tour-form__label {
+.formLabel {
   display: flex;
   flex-direction: column;
   row-gap: 7px;
   line-height: inherit;
 }
 
-.create-tour-form__input {
+.formInput {
   padding: 19px;
 
   border: 1px solid var(--color-beige-200);
@@ -78,7 +78,7 @@
   }
 }
 
-.create-tour-form__textarea {
+.textarea {
   resize: none;
 
   @include mixins.media-small {
@@ -88,22 +88,22 @@
 
 // Radio
 
-.create-tour-form__set-age {
+.setAgeContainer {
   margin: 0;
   padding: 0;
   border: none;
 }
 
-.create-tour-form__set-age-title {
+.setAgeContainerTitle {
   margin-bottom: 8px;
 }
 
-.create-tour-form__radiobtn-container {
+.radiobtnContainer {
   display: flex;
   column-gap: 30px;
 }
 
-.create-tour-form__link_accent {
+.linkAccent {
   color: var(--color-black);
 
   @media (hover: hover) {
@@ -117,7 +117,7 @@
   }
 }
 
-.create-tour-form__btns-container {
+.btnsContainer {
   display: flex;
   column-gap: 30px;
 
@@ -126,7 +126,7 @@
   }
 }
 
-.create-tour-form__btn {
+.btnForm {
   padding: 15px 71px;
 
   border-radius: 10px;
@@ -141,7 +141,7 @@
   }
 }
 
-.create-tour-form__btn-submit {
+.btnFormSubmit {
   color: var(--color-white);
   background-color: var(--color-green-400);
 
@@ -156,7 +156,7 @@
   }
 }
 
-.create-tour-form__btn-reset {
+.btnFormReset {
   color: var(--color-green-400);
   background-color: var(--color-green-100);
 
