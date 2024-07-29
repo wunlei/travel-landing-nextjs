@@ -2,26 +2,8 @@ import { useEffect, useState } from "react";
 import { useDebounce } from "@/hooks";
 import cn from "classnames";
 import Logo from "@/assets/icons/Logo.svg";
+import { navLinks } from "@/constants";
 import s from "./Header.module.scss";
-
-const navLinks = [
-  {
-    href: "#tours",
-    title: "Туры",
-  },
-  {
-    href: "#create-tour",
-    title: "Создать тур",
-  },
-  {
-    href: "#reviews",
-    title: "Отзывы",
-  },
-  {
-    href: "#stories",
-    title: "Истории",
-  },
-];
 
 const headerStickyClass = s["header_sticky"];
 const headerRemovedClass = s["header_removed"];

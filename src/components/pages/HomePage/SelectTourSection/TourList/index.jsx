@@ -2,15 +2,8 @@ import { useState } from "react";
 import cn from "classnames";
 import { tourCards } from "../data";
 import TourCard from "../TourCard";
+import { tourTabs } from "@/constants";
 import s from "./TourList.module.scss";
-
-const tourTabs = [
-  "Популярные",
-  "Авторские",
-  "Походы",
-  "Сплавы",
-  "Велопрогулки",
-];
 
 function TourList() {
   const [activeTab, setActiveTab] = useState(tourTabs[0]);
