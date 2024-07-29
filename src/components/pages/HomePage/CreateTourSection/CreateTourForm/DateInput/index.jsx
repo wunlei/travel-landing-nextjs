@@ -1,8 +1,8 @@
 import cn from "classnames";
 import InputElement from "../Input";
-import styles from "./DateInput.module.scss";
+import s from "./DateInput.module.scss";
 
-const activeDateInputClass = styles["create-tour-form__input-date_has-value"];
+const activeDateInputClass = s["create-tour-form__input-date_has-value"];
 
 function DateInput({
   label,
@@ -20,7 +20,7 @@ function DateInput({
       label={label}
       inputClasses={[
         cn(
-          styles["create-tour-form__input-date"],
+          s["create-tour-form__input-date"],
           { [activeDateInputClass]: Boolean(value) },
           inputClasses,
         ),

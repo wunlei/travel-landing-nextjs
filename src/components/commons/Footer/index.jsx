@@ -2,7 +2,7 @@ import cn from "classnames";
 import Instagram from "@/assets/icons/Instagram.svg";
 import Facebook from "@/assets/icons/Facebook.svg";
 import Vk from "@/assets/icons/Vk.svg";
-import styles from "./Footer.module.scss";
+import s from "./Footer.module.scss";
 
 const socialLinks = [
   {
@@ -16,20 +16,20 @@ const socialLinks = [
 
 function Footer() {
   return (
-    <footer className={styles["footer"]}>
-      <div className={styles["footer__content"]}>
+    <footer className={s["footer"]}>
+      <div className={s["footer__content"]}>
         <p className="text_normal">Наши социальные сети</p>
-        <ul className={cn("list", "text_normal", styles["contacts-list"])}>
+        <ul className={cn("list", "text_normal", s["contacts-list"])}>
           {socialLinks.map((el) => (
-            <li key={el.href} className={styles["contacts-list__item"]}>
+            <li key={el.href} className={s["contacts-list__item"]}>
               <a
-                className={styles["contacts-list__link"]}
+                className={s["contacts-list__link"]}
                 href={el.href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {el.icon}
-                <span className={styles["contacts-list__link-title"]}>
+                <span className={s["contacts-list__link-title"]}>
                   {el.title}
                 </span>
               </a>

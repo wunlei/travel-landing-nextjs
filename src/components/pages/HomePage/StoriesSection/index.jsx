@@ -1,7 +1,7 @@
 import { storyCards } from "./data";
 import Section from "@/components/commons/Section";
 import StoryCard from "./StoryCard";
-import styles from "./Stories.module.scss";
+import s from "./Stories.module.scss";
 
 function StoriesSection() {
   return (
@@ -11,7 +11,7 @@ function StoriesSection() {
       subtitle="Идейные соображения высшего порядка, а также рамки и место обучения
         кадров"
     >
-      <div className={styles["story-cards"]}>
+      <div className={s["story-cards"]}>
         {storyCards.map((card) => (
           <StoryCard
             key={card.id}

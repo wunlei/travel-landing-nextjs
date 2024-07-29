@@ -5,10 +5,10 @@ import DateInput from "./DateInput";
 import RadioInput from "./RadioInput";
 import Checkbox from "./Checkbox";
 import SelectElement from "./Select";
-import styles from "./CreateTourForm.module.scss";
+import s from "./CreateTourForm.module.scss";
 
-const labelClass = styles["create-tour-form__label"];
-const inputClass = styles["create-tour-form__input"];
+const labelClass = s["create-tour-form__label"];
+const inputClass = s["create-tour-form__input"];
 
 function CreateTourForm() {
   const [name, setName] = useState("");
@@ -47,14 +47,14 @@ function CreateTourForm() {
 
   return (
     <form
-      className={cn("text_normal", styles["create-tour-form"])}
+      className={cn("text_normal", s["create-tour-form"])}
       action="#"
       method="post"
       id="create-tour-form"
       onSubmit={handleSubmit}
       onReset={handleReset}
     >
-      <div className={styles["create-tour-form__container"]}>
+      <div className={s["create-tour-form__container"]}>
         <InputElement
           label="Имя"
           type="text"
@@ -121,7 +121,7 @@ function CreateTourForm() {
       <label className={labelClass}>
         Комментарий
         <textarea
-          className={cn(inputClass, styles["create-tour-form__textarea"])}
+          className={cn(inputClass, s["create-tour-form__textarea"])}
           name="commentary"
           value={commentary}
           rows={4}
@@ -129,11 +129,11 @@ function CreateTourForm() {
         ></textarea>
       </label>
 
-      <fieldset className={styles["create-tour-form__set-age"]}>
-        <legend className={styles["create-tour-form__set-age-title"]}>
+      <fieldset className={s["create-tour-form__set-age"]}>
+        <legend className={s["create-tour-form__set-age-title"]}>
           Вам есть 18 лет?
         </legend>
-        <div className={styles["create-tour-form__radiobtn-container"]}>
+        <div className={s["create-tour-form__radiobtn-container"]}>
           <RadioInput
             label="Да"
             name="adult"
@@ -159,7 +159,7 @@ function CreateTourForm() {
       >
         Нажимая кнопку, я принимаю условия{" "}
         <a
-          className={styles["create-tour-form__link_accent"]}
+          className={s["create-tour-form__link_accent"]}
           href="#"
           target="_blank"
         >
@@ -167,11 +167,11 @@ function CreateTourForm() {
         </a>
       </Checkbox>
 
-      <div className={cn(styles["create-tour-form__btns-container"])}>
+      <div className={cn(s["create-tour-form__btns-container"])}>
         <button
           className={cn(
-            styles["create-tour-form__btn"],
-            styles["create-tour-form__btn-submit"],
+            s["create-tour-form__btn"],
+            s["create-tour-form__btn-submit"],
           )}
           type="submit"
         >
@@ -179,8 +179,8 @@ function CreateTourForm() {
         </button>
         <button
           className={cn(
-            styles["create-tour-form__btn"],
-            styles["create-tour-form__btn-reset"],
+            s["create-tour-form__btn"],
+            s["create-tour-form__btn-reset"],
           )}
           type="reset"
         >

@@ -2,7 +2,7 @@ import { useState } from "react";
 import cn from "classnames";
 import { tourCards } from "../data";
 import TourCard from "../TourCard";
-import styles from "./TourList.module.scss";
+import s from "./TourList.module.scss";
 
 const tourTabs = [
   "Популярные",
@@ -17,12 +17,12 @@ function TourList() {
 
   return (
     <>
-      <ul className={cn("list", styles["tour-tabs"])}>
+      <ul className={cn("list", s["tour-tabs"])}>
         {tourTabs.map((tab) => (
           <li key={tab}>
             <button
-              className={cn(styles["tour-tabs__btn"], "text_big", {
-                [styles["tour-tabs__btn_active"]]: activeTab === tab,
+              className={cn(s["tour-tabs__btn"], "text_big", {
+                [s["tour-tabs__btn_active"]]: activeTab === tab,
               })}
               onClick={() => setActiveTab(tab)}
             >
@@ -31,7 +31,7 @@ function TourList() {
           </li>
         ))}
       </ul>
-      <div className={styles["tour-cards"]}>
+      <div className={s["tour-cards"]}>
         {tourCards.map((card) => (
           <TourCard
             key={card.id}

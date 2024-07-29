@@ -1,8 +1,8 @@
 import cn from "classnames";
 import ArrowDown from "@/assets/icons/ArrowDown.svg";
-import styles from "./Select.module.scss";
+import s from "./Select.module.scss";
 
-const activeSelectClass = styles["create-tour-form__select_selected"];
+const activeSelectClass = s["create-tour-form__select_selected"];
 
 function SelectElement({
   title,
@@ -15,12 +15,12 @@ function SelectElement({
   onChange,
 }) {
   return (
-    <div className={styles["create-tour-form__select-container"]}>
+    <div className={s["create-tour-form__select-container"]}>
       <label className={cn(labelClasses)}>
         {title}
         <select
           className={cn(
-            styles["create-tour-form__select"],
+            s["create-tour-form__select"],
             {
               [activeSelectClass]: Boolean(value),
             },
@@ -40,7 +40,7 @@ function SelectElement({
           ))}
         </select>
       </label>
-      <ArrowDown className={styles["create-tour-form__select-arrow"]} />
+      <ArrowDown className={s["create-tour-form__select-arrow"]} />
     </div>
   );
 }

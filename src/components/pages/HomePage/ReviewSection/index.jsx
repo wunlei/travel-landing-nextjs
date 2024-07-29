@@ -1,7 +1,7 @@
 import Section from "@/components/commons/Section";
 import ReviewCard from "./ReviewCard";
 import { reviewCards } from "./data";
-import styles from "./Review.module.scss";
+import s from "./Review.module.scss";
 
 function ReviewSection() {
   return (
@@ -11,7 +11,7 @@ function ReviewSection() {
       subtitle="Идейные соображения высшего порядка, а также рамки и место обучения
         кадров"
     >
-      <div className={styles["review-cards"]}>
+      <div className={s["review-cards"]}>
         {reviewCards.map((card) => (
           <ReviewCard
             key={card.id}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDebounce } from "@/hooks";
 import cn from "classnames";
 import Logo from "@/assets/icons/Logo.svg";
-import styles from "./Header.module.scss";
+import s from "./Header.module.scss";
 
 const navLinks = [
   {
@@ -23,8 +23,8 @@ const navLinks = [
   },
 ];
 
-const headerStickyClass = styles["header_sticky"];
-const headerRemovedClass = styles["header_removed"];
+const headerStickyClass = s["header_sticky"];
+const headerRemovedClass = s["header_removed"];
 const HEADER_APPEAR_POSITION = 450;
 
 function Header() {
@@ -63,28 +63,28 @@ function Header() {
 
   return (
     <header
-      className={cn(styles["header"], {
+      className={cn(s["header"], {
         [headerStickyClass]: isShowed,
         [headerRemovedClass]: isRemoved,
       })}
       onAnimationEnd={handleAnimationEnd}
     >
-      <div className={styles["content"]}>
-        <a href="#" className={styles["logo-container"]}>
-          <Logo className={styles["logo"]} />
+      <div className={s["content"]}>
+        <a href="#" className={s["logo-container"]}>
+          <Logo className={s["logo"]} />
         </a>
-        <nav className={styles["page-nav"]}>
-          <ul className={cn("list", "text_normal", styles["page-nav__list"])}>
+        <nav className={s["page-nav"]}>
+          <ul className={cn("list", "text_normal", s["page-nav__list"])}>
             {navLinks.map((el) => (
               <li key={el.href}>
-                <a href={el.href} className={styles["page-nav__link"]}>
+                <a href={el.href} className={s["page-nav__link"]}>
                   {el.title}
                 </a>
               </li>
             ))}
           </ul>
         </nav>
-        <a href="tel:+79999999999" className={cn(styles["page-nav__link"])}>
+        <a href="tel:+79999999999" className={cn(s["page-nav__link"])}>
           <p className="text_normal">+7 999 999 99 99</p>
         </a>
       </div>

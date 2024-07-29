@@ -1,19 +1,19 @@
 import Image from "next/image";
 import Section from "@/components/commons/Section";
 import { galleryImages } from "./data";
-import styles from "./Gallery.module.scss";
+import s from "./Gallery.module.scss";
 
 function GallerySection() {
   return (
     <Section
-      classes={[styles["section-photos"]]}
+      classes={[s["section-photos"]]}
       title="Фотографии путешествий"
       subtitle="Идейные соображения высшего порядка, а также рамки и место обучения
         кадров"
     >
-      <div className={styles["gallery"]}>
+      <div className={s["gallery"]}>
         {galleryImages.map((image) => (
-          <picture key={image} className={styles["gallery__img"]}>
+          <picture key={image} className={s["gallery__img"]}>
             <Image
               src={image}
               alt="photo"
