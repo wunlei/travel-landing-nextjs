@@ -2,7 +2,7 @@ import cn from "classnames";
 import InputElement from "../Input";
 import s from "./DateInput.module.scss";
 
-const activeDateInputClass = s["create-tour-form__input-date_has-value"];
+const activeDateInputClass = s.inputHasValue;
 
 function DateInput({
   label,

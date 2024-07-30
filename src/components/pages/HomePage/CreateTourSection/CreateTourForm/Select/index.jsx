@@ -2,7 +2,7 @@ import cn from "classnames";
 import ArrowDown from "@/assets/icons/ArrowDown.svg";
 import s from "./Select.module.scss";
 
-const activeSelectClass = s["create-tour-form__select_selected"];
+const activeSelectClass = s.selectSelected;
 
 function SelectElement({
   title,

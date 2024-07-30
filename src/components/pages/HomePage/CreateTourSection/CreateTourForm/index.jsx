@@ -7,8 +7,8 @@ import Checkbox from "./Checkbox";
 import SelectElement from "./Select";
 import s from "./CreateTourForm.module.scss";
 
-const labelClass = s["create-tour-form__label"];
-const inputClass = s["create-tour-form__input"];
+const labelClass = s.formLabel;
+const inputClass = s.formInput;
 
 function CreateTourForm() {
   const [name, setName] = useState("");
