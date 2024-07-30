@@ -5,34 +5,32 @@ import Logo from "@/assets/icons/Logo.svg";
 import { navLinks } from "@/constants";
 import Paragraph from "../Paragraph/Paragraph";
 import List from "../List/List";
+import { HEADER_APPEAR_POSITION, HEADER_STATE } from "@/constants/Header";
 import s from "./Header.module.scss";
 
 const headerStickyClass = s.headerSticky;
 const headerRemovedClass = s.headerRemoved;
-const HEADER_APPEAR_POSITION = 450;
 
 function Header() {
-  const [isShowed, setIsShowed] = useState(false);
-  const [isRemoved, setIsRemoved] = useState(false);
+  const [headerState, setHeaderState] = useState(HEADER_STATE.init);
 
   function handleScroll() {
     const currentPosition = window.scrollY;
 
     if (currentPosition > HEADER_APPEAR_POSITION) {
-      if (!isShowed) {
-        setIsShowed(true);
+      if (headerState !== HEADER_STATE.showed) {
+        setHeaderState(HEADER_STATE.showed);
       }
     } else {
-      if (isShowed) {
-        setIsRemoved(true);
+      if (headerState === HEADER_STATE.showed) {
+        setHeaderState(HEADER_STATE.hidden);
       }
     }
   }
 
   function handleAnimationEnd() {
-    if (isRemoved) {
-      setIsRemoved(false);
-      setIsShowed(false);
+    if (headerState === HEADER_STATE.hidden) {
+      setHeaderState(HEADER_STATE.init);
     }
   }
 
@@ -48,8 +46,8 @@ function Header() {
   return (
     <header
       className={cn(s.header, {
-        [headerStickyClass]: isShowed,
-        [headerRemovedClass]: isRemoved,
+        [headerStickyClass]: headerState === HEADER_STATE.showed,
+        [headerRemovedClass]: headerState === HEADER_STATE.hidden,
       })}
       onAnimationEnd={handleAnimationEnd}
     >

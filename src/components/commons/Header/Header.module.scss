@@ -17,7 +17,7 @@
   }
 }
 
-.headerSticky {
+.sticky {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -26,8 +26,6 @@
   background: rgba(243, 239, 232, 0.6);
   backdrop-filter: blur(27px);
 
-  animation: 0.3s ease forwards show-header;
-
   .logo {
     fill: var(--color-black);
   }
@@ -35,6 +33,12 @@
   .navLink::after {
     background-color: var(--color-black);
   }
+}
+
+.headerSticky {
+  @extend .sticky;
+
+  animation: 0.3s ease forwards show-header;
 }
 
 @keyframes show-header {
@@ -48,6 +52,8 @@
 }
 
 .headerRemoved {
+  @extend .sticky;
+
   animation: 0.3s ease forwards remove-header;
 }
 
