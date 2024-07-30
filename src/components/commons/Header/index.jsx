@@ -3,6 +3,8 @@ import { useDebounce } from "@/hooks";
 import cn from "classnames";
 import Logo from "@/assets/icons/Logo.svg";
 import { navLinks } from "@/constants";
+import Paragraph from "../Paragraph/Paragraph";
+import List from "../List/List";
 import s from "./Header.module.scss";
 
 const headerStickyClass = s.headerSticky;
@@ -56,7 +58,7 @@ function Header() {
           <Logo className={s.logo} />
         </a>
         <nav className={s.pageNav}>
-          <ul className={cn("list", "text_normal", s.navList)}>
+          <List classnames={[s.navList]}>
             {navLinks.map((el) => (
               <li key={el.href}>
                 <a href={el.href} className={s.navLink}>
@@ -64,10 +66,10 @@ function Header() {
                 </a>
               </li>
             ))}
-          </ul>
+          </List>
         </nav>
         <a href="tel:+79999999999" className={s.navLink}>
-          <p className="text_normal">+7 999 999 99 99</p>
+          <Paragraph>+7 999 999 99 99</Paragraph>
         </a>
       </div>
     </header>

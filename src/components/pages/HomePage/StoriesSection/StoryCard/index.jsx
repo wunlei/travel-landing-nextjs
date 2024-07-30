@@ -1,6 +1,8 @@
 import { Fragment } from "react";
 import cn from "classnames";
 import ButtonDetails from "@/components/commons/ButtonDetails";
+import List from "@/components/commons/List/List";
+import Link from "@/components/commons/Link/Link";
 import s from "./StoryCard.module.scss";
 
 function StoryCard({ title, links, content, background }) {
@@ -27,20 +29,15 @@ function StoryCard({ title, links, content, background }) {
       </div>
       <div className={s.cardFooter}>
         <ButtonDetails classes={[s.cardBtn, "text_big"]} />
-        <ul className={cn("list", "text_normal", s.cardLinks)}>
+        <List classnames={[s.cardLinks]}>
           {links.map((link) => (
             <li key={link.title}>
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={s.cardLink}
-              >
+              <Link href={link.href} classnames={[s.cardLink]}>
                 {link.title}
-              </a>
+              </Link>
             </li>
           ))}
-        </ul>
+        </List>
       </div>
     </div>
   );
