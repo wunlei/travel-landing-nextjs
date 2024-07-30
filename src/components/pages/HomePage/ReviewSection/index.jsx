@@ -1,16 +1,14 @@
+import { useContext } from "react";
+import { AppContext } from "@/data";
 import Section from "@/components/commons/Section";
 import ReviewCard from "./ReviewCard";
 import { reviewCards } from "./data";
 import s from "./Review.module.scss";
 
 function ReviewSection() {
+  const { title, subtitle } = useContext(AppContext).reviewSection;
   return (
-    <Section
-      id="reviews"
-      title="Отзывы наших путешественников"
-      subtitle="Идейные соображения высшего порядка, а также рамки и место обучения
-        кадров"
-    >
+    <Section id="reviews" title={title} subtitle={subtitle}>
       <div className={s.cards}>
         {reviewCards.map((card) => (
           <ReviewCard
