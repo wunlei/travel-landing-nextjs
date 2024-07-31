@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 
 function Link({ href, classnames = [], children }) {
@@ -14,3 +15,8 @@ function Link({ href, classnames = [], children }) {
 }
 
 export default Link;
+
+Link.propTypes = {
+  href: PropTypes.string.isRequired,
+  classnames: PropTypes.arrayOf(PropTypes.string),
+};

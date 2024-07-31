@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 import s from "./Checkbox.module.scss";
 
@@ -18,3 +19,10 @@ function Checkbox({ name, value, checked, onChange, children }) {
 }
 
 export default Checkbox;
+
+Checkbox.propTypes = {
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  checked: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

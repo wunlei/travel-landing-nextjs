@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 import ArrowDown from "@/assets/icons/ArrowDown.svg";
 import s from "./Select.module.scss";
@@ -46,3 +47,14 @@ function SelectElement({
 }
 
 export default SelectElement;
+
+SelectElement.propTypes = {
+  title: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectClasses: PropTypes.arrayOf(PropTypes.string),
+  labelClasses: PropTypes.arrayOf(PropTypes.string),
+  onChange: PropTypes.func.isRequired,
+};

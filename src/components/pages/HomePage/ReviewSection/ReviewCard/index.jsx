@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Image from "next/image";
 import cn from "classnames";
 import s from "./ReviewCard.module.scss";
@@ -32,3 +33,10 @@ function ReviewCard({ reviewContent, author, authorPhoto, tourName }) {
 }
 
 export default ReviewCard;
+
+ReviewCard.propTypes = {
+  reviewContent: PropTypes.arrayOf(PropTypes.string).isRequired,
+  author: PropTypes.string.isRequired,
+  authorPhoto: PropTypes.string.isRequired,
+  tourName: PropTypes.string.isRequired,
+};

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 import ArrowRight from "@/assets/icons/ArrowRight.svg";
 import s from "./ButtonDetails.module.scss";
@@ -12,3 +13,7 @@ function ButtonDetails({ classes = [] }) {
 }
 
 export default ButtonDetails;
+
+ButtonDetails.propTypes = {
+  classes: PropTypes.arrayOf(PropTypes.string),
+};

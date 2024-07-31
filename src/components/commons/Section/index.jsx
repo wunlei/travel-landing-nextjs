@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 import s from "./Section.module.scss";
 
@@ -12,3 +13,10 @@ function Section({ title, subtitle, classes = [], id, children }) {
 }
 
 export default Section;
+
+Section.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  classes: PropTypes.arrayOf(PropTypes.string),
+  id: PropTypes.string,
+};

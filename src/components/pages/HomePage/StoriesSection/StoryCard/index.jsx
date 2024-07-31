@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Fragment } from "react";
 import cn from "classnames";
 import ButtonDetails from "@/components/commons/ButtonDetails";
@@ -44,3 +45,10 @@ function StoryCard({ title, links, content, background }) {
 }
 
 export default StoryCard;
+
+StoryCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  links: PropTypes.array,
+  content: PropTypes.array,
+  background: PropTypes.func,
+};

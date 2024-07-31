@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function InputElement({
   label,
   name,
@@ -24,3 +26,14 @@ function InputElement({
 }
 
 export default InputElement;
+
+InputElement.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  labelClasses: PropTypes.arrayOf(PropTypes.string),
+  inputClasses: PropTypes.arrayOf(PropTypes.string),
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

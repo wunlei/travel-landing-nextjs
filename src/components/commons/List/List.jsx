@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 
 function List({ classnames = [], children }) {
@@ -5,3 +6,7 @@ function List({ classnames = [], children }) {
 }
 
 export default List;
+
+List.propTypes = {
+  classnames: PropTypes.arrayOf(PropTypes.string),
+};

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 import ButtonDetails from "@/components/commons/ButtonDetails";
 import s from "./TourCard.module.scss";
@@ -21,3 +22,9 @@ function TourCard({ title, subtitle, bgImage }) {
 }
 
 export default TourCard;
+
+TourCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  bgImage: PropTypes.string.isRequired,
+};
