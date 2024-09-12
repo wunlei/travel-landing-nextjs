@@ -1,19 +1,17 @@
+import { useContext } from "react";
+import { AppContext } from "@/data";
 import Image from "next/image";
 import Section from "@/components/commons/Section";
 import { galleryImages } from "./data";
-import styles from "./Gallery.module.scss";
+import s from "./Gallery.module.scss";
 
 function GallerySection() {
+  const { title, subtitle } = useContext(AppContext).gallerySection;
   return (
-    <Section
-      classes={[styles["section-photos"]]}
-      title="Фотографии путешествий"
-      subtitle="Идейные соображения высшего порядка, а также рамки и место обучения
-        кадров"
-    >
-      <div className={styles["gallery"]}>
+    <Section classes={[s.container]} title={title} subtitle={subtitle}>
+      <div className={s.gallery}>
         {galleryImages.map((image) => (
-          <picture key={image} className={styles["gallery__img"]}>
+          <picture key={image} className={s.galleryImg}>
             <Image
               src={image}
               alt="photo"

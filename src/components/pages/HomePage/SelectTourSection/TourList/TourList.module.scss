@@ -1,6 +1,6 @@
 @use "@/styles/abstracts/mixins";
 
-.tour-tabs {
+.tabs {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -17,7 +17,7 @@
   }
 }
 
-.tour-tabs__btn {
+.tabsBtn {
   position: relative;
   cursor: pointer;
 
@@ -39,7 +39,7 @@
   }
 }
 
-.tour-tabs__btn_active {
+.tabsBtnActive {
   color: var(--color-orange-200);
 
   &::after {
@@ -49,7 +49,7 @@
   }
 }
 
-.tour-cards {
+.cardsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

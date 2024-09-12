@@ -1,23 +1,30 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 import ButtonDetails from "@/components/commons/ButtonDetails";
-import styles from "./TourCard.module.scss";
+import s from "./TourCard.module.scss";
 
 function TourCard({ title, subtitle, bgImage }) {
   return (
-    <div className={styles["tour-card"]}>
+    <div className={s.card}>
       <div
-        className={styles["tour-card__bg"]}
+        className={s.cardBg}
         style={{ backgroundImage: `url(${bgImage})` }}
       ></div>
-      <div className={styles["card__content"]}>
-        <div className={styles["card__header"]}>
-          <h3 className={cn("title-h3", styles["card__title"])}>{title}</h3>
+      <div className={s.content}>
+        <div className={s.header}>
+          <h3 className={cn("title-h3", s.cardTitle)}>{title}</h3>
           <p className={cn("text_small")}>{subtitle}</p>
         </div>
-        <ButtonDetails classes={[styles["card__btn"]]} />
+        <ButtonDetails classes={[s.cardBtn]} />
       </div>
     </div>
   );
 }
 
 export default TourCard;
+
+TourCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  bgImage: PropTypes.string.isRequired,
+};

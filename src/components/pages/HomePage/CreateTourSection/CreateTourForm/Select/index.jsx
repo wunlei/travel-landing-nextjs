@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 import ArrowDown from "@/assets/icons/ArrowDown.svg";
-import styles from "./Select.module.scss";
+import s from "./Select.module.scss";
 
-const activeSelectClass = styles["create-tour-form__select_selected"];
+const activeSelectClass = s.selectSelected;
 
 function SelectElement({
   title,
@@ -15,12 +16,12 @@ function SelectElement({
   onChange,
 }) {
   return (
-    <div className={styles["create-tour-form__select-container"]}>
+    <div className={s.container}>
       <label className={cn(labelClasses)}>
         {title}
         <select
           className={cn(
-            styles["create-tour-form__select"],
+            s.select,
             {
               [activeSelectClass]: Boolean(value),
             },
@@ -40,9 +41,20 @@ function SelectElement({
           ))}
         </select>
       </label>
-      <ArrowDown className={styles["create-tour-form__select-arrow"]} />
+      <ArrowDown className={s.selectArrow} />
     </div>
   );
 }
 
 export default SelectElement;
+
+SelectElement.propTypes = {
+  title: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectClasses: PropTypes.arrayOf(PropTypes.string),
+  labelClasses: PropTypes.arrayOf(PropTypes.string),
+  onChange: PropTypes.func.isRequired,
+};

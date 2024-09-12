@@ -1,14 +1,12 @@
+import { useContext } from "react";
+import { AppContext } from "@/data";
 import Section from "@/components/commons/Section";
 import CreateTourForm from "./CreateTourForm";
 
 function CreateTourSection() {
+  const { title, subtitle } = useContext(AppContext).createTourSection;
   return (
-    <Section
-      id="create-tour"
-      title="Собери свой тур"
-      subtitle="Идейные соображения высшего порядка, а также рамки и место обучения
-        кадров"
-    >
+    <Section id="create-tour" title={title} subtitle={subtitle}>
       <CreateTourForm />
     </Section>
   );

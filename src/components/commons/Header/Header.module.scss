@@ -5,7 +5,7 @@
   color: var(--color-white);
 }
 
-.logo-container {
+.logoContainer {
   line-height: 0;
 }
 
@@ -17,7 +17,7 @@
   }
 }
 
-.header_sticky {
+.sticky {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -26,15 +26,19 @@
   background: rgba(243, 239, 232, 0.6);
   backdrop-filter: blur(27px);
 
-  animation: 0.3s ease forwards show-header;
-
   .logo {
     fill: var(--color-black);
   }
 
-  .page-nav__link::after {
+  .navLink::after {
     background-color: var(--color-black);
   }
+}
+
+.headerSticky {
+  @extend .sticky;
+
+  animation: 0.3s ease forwards show-header;
 }
 
 @keyframes show-header {
@@ -47,7 +51,9 @@
   }
 }
 
-.header_removed {
+.headerRemoved {
+  @extend .sticky;
+
   animation: 0.3s ease forwards remove-header;
 }
 
@@ -77,13 +83,13 @@
   }
 }
 
-.page-nav {
+.pageNav {
   @include mixins.media-small {
     display: none;
   }
 }
 
-.page-nav__list {
+.navList {
   display: flex;
   column-gap: 50px;
 
@@ -92,7 +98,7 @@
   }
 }
 
-.page-nav__link {
+.navLink {
   position: relative;
 
   &::after {

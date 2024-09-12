@@ -1,28 +1,22 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import cn from "classnames";
 import { tourCards } from "../data";
 import TourCard from "../TourCard";
-import styles from "./TourList.module.scss";
-
-const tourTabs = [
-  "Популярные",
-  "Авторские",
-  "Походы",
-  "Сплавы",
-  "Велопрогулки",
-];
+import { AppContext } from "@/data";
+import s from "./TourList.module.scss";
 
 function TourList() {
-  const [activeTab, setActiveTab] = useState(tourTabs[0]);
+  const { tours } = useContext(AppContext).selectTourSection;
+  const [activeTab, setActiveTab] = useState(tours[0]);
 
   return (
     <>
-      <ul className={cn("list", styles["tour-tabs"])}>
-        {tourTabs.map((tab) => (
+      <ul className={cn("list", s.tabs)}>
+        {tours.map((tab) => (
           <li key={tab}>
             <button
-              className={cn(styles["tour-tabs__btn"], "text_big", {
-                [styles["tour-tabs__btn_active"]]: activeTab === tab,
+              className={cn(s.tabsBtn, "text_big", {
+                [s.tabsBtnActive]: activeTab === tab,
               })}
               onClick={() => setActiveTab(tab)}
             >
@@ -31,7 +25,7 @@ function TourList() {
           </li>
         ))}
       </ul>
-      <div className={styles["tour-cards"]}>
+      <div className={s.cardsContainer}>
         {tourCards.map((card) => (
           <TourCard
             key={card.id}

@@ -1,7 +1,7 @@
 @use "@/styles/abstracts/mixins";
 @use "@/styles/abstracts/extends";
 
-.section-cta {
+.container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -16,7 +16,7 @@
   }
 }
 
-.section-cta__img {
+.img {
   width: 370px;
   height: 370px;
 
@@ -32,7 +32,7 @@
   }
 }
 
-.section-cta__content {
+.content {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -44,7 +44,7 @@
   }
 }
 
-.section-cta__link {
+.link {
   @media (hover: hover) {
     &:hover {
       text-decoration: underline;

@@ -1,21 +1,22 @@
+import { useContext } from "react";
+import { AppContext } from "@/data";
 import Section from "@/components/commons/Section";
-import styles from "./CTA.module.scss";
+import Paragraph from "@/components/commons/Paragraph/Paragraph";
+import s from "./CTA.module.scss";
 
 function CTASection() {
+  const { title, linkTitle, linkHref } = useContext(AppContext).CTASection;
   return (
-    <Section classes={[styles["section-cta"]]}>
-      <div className={styles["section-cta__img"]}></div>
-      <div className={styles["section-cta__content"]}>
-        <h2 className="title-h3">Пора в путешествие вместе с нами!</h2>
-        <p className="text_normal">
-          Напиши на почту и узнай подробности на{" "}
-          <a
-            className={styles["section-cta__link"]}
-            href="mailto:yourtour@gmail.com"
-          >
-            yourtour@gmail.com
+    <Section classes={[s.container]}>
+      <div className={s.img}></div>
+      <div className={s.content}>
+        <h2 className="title-h3">{title}</h2>
+        <Paragraph>
+          {linkTitle}{" "}
+          <a className={s.link} href={`mailto:${linkHref}`}>
+            {linkHref}
           </a>
-        </p>
+        </Paragraph>
       </div>
     </Section>
   );

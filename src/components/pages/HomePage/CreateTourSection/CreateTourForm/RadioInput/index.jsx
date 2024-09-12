@@ -1,21 +1,28 @@
-import styles from "./RadioInput.module.scss";
+import PropTypes from "prop-types";
+import s from "./RadioInput.module.scss";
 
 function RadioInput({ label, checked, name, value, onChange }) {
   return (
-    <label className={styles["create-tour-form__label-radiobtn"]}>
+    <label className={s.label}>
       <input
-        className={styles["create-tour-form__radiobtn"]}
+        className={s.inputRadio}
         type="radio"
         name={name}
         checked={checked === value}
         value={value}
         onChange={onChange}
       />
-      <span className={styles["create-tour-form__radiobtn-title"]}>
-        {label}
-      </span>
+      <span className={s.title}>{label}</span>
     </label>
   );
 }
 
 export default RadioInput;
+
+RadioInput.propTypes = {
+  label: PropTypes.string,
+  checked: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

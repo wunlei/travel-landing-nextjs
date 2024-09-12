@@ -7,19 +7,22 @@ import StoriesSection from "./StoriesSection";
 import CTASection from "./CTASection";
 import CreateTourSection from "./CreateTourSection";
 import Footer from "@/components/commons/Footer";
+import { AppContext, appData } from "@/data";
 
 function HomePage() {
   return (
     <>
       <Header />
       <main className="main">
-        <HeroSection />
-        <SelectTourSection />
-        <CreateTourSection />
-        <ReviewSection />
-        <GallerySection />
-        <StoriesSection />
-        <CTASection />
+        <AppContext.Provider value={appData}>
+          <HeroSection />
+          <SelectTourSection />
+          <CreateTourSection />
+          <ReviewSection />
+          <GallerySection />
+          <StoriesSection />
+          <CTASection />
+        </AppContext.Provider>
       </main>
       <Footer />
     </>

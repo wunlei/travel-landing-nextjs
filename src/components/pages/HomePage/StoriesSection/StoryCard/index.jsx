@@ -1,24 +1,25 @@
+import PropTypes from "prop-types";
 import { Fragment } from "react";
 import cn from "classnames";
 import ButtonDetails from "@/components/commons/ButtonDetails";
-import styles from "./StoryCard.module.scss";
+import List from "@/components/commons/List/List";
+import Link from "@/components/commons/Link/Link";
+import s from "./StoryCard.module.scss";
 
 function StoryCard({ title, links, content, background }) {
   return (
-    <div className={styles["story-card"]}>
+    <div className={s.card}>
       <div
-        className={styles["story-card__bg"]}
+        className={s.cardBg}
         style={{ backgroundImage: `url(${background})` }}
       ></div>
-      <h3 className={cn("title-h3", styles["story-card__title"])}>{title}</h3>
-      <div className={cn(styles["story-card__content"], "text_normal")}>
+      <h3 className={cn("title-h3", s.cardTitle)}>{title}</h3>
+      <div className={cn(s.content, "text_normal")}>
         {content.map((el, index) => (
           <Fragment key={index}>
-            {el.type === "text" && (
-              <p className={styles["story-card__content-text"]}>{el.content}</p>
-            )}
+            {el.type === "text" && <p>{el.content}</p>}
             {el.type === "list" && (
-              <ul className={styles["story-card__content-list"]}>
+              <ul className={s.list}>
                 {el.content.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -27,25 +28,27 @@ function StoryCard({ title, links, content, background }) {
           </Fragment>
         ))}
       </div>
-      <div className={styles["story-card__footer"]}>
-        <ButtonDetails classes={[styles["story-card__btn"], "text_big"]} />
-        <ul className={cn("list", "text_normal", styles["story-card__links"])}>
+      <div className={s.cardFooter}>
+        <ButtonDetails classes={[s.cardBtn, "text_big"]} />
+        <List classnames={[s.cardLinks]}>
           {links.map((link) => (
             <li key={link.title}>
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles["story-card__link"]}
-              >
+              <Link href={link.href} classnames={[s.cardLink]}>
                 {link.title}
-              </a>
+              </Link>
             </li>
           ))}
-        </ul>
+        </List>
       </div>
     </div>
   );
 }
 
 export default StoryCard;
+
+StoryCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  links: PropTypes.array,
+  content: PropTypes.array,
+  background: PropTypes.func,
+};

@@ -1,6 +1,6 @@
 @use "@/styles/abstracts/mixins";
 
-.create-tour-form__label-checkbox {
+.checkboxLabel {
   position: relative;
 
   display: flex;
@@ -18,7 +18,7 @@
   }
 }
 
-.create-tour-form__checkbox {
+.checkbox {
   position: relative;
 
   flex-shrink: 0;
@@ -38,7 +38,7 @@
   }
 }
 
-.create-tour-form__checkbox-title::after {
+.checkboxTitle::after {
   position: absolute;
   top: calc(50% - 5px);
   left: 6px;
@@ -62,6 +62,6 @@
   }
 }
 
-.create-tour-form__checkbox:checked + .create-tour-form__checkbox-title::after {
+.checkbox:checked + .checkboxTitle::after {
   opacity: 1;
 }

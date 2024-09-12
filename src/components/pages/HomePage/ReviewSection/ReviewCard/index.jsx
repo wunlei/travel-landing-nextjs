@@ -1,26 +1,25 @@
+import PropTypes from "prop-types";
 import Image from "next/image";
 import cn from "classnames";
-import styles from "./ReviewCard.module.scss";
+import s from "./ReviewCard.module.scss";
 
 function ReviewCard({ reviewContent, author, authorPhoto, tourName }) {
   return (
-    <div className={styles["review-card"]}>
+    <div className={s.card}>
       {reviewContent.map((text) => (
-        <p key={text} className={cn(styles["card__text"], "text_big")}>
+        <p key={text} className={cn(s.cardText, "text_big")}>
           {text}
         </p>
       ))}
 
-      <div className={styles["card__footer"]}>
+      <div className={s.footer}>
         <div>
-          <h3 className={cn(styles["author"], "title-h3")}>{author}</h3>
-          <p className={cn(styles["tour-name"], "text_small")}>
-            Тур: {tourName}
-          </p>
+          <h3 className={cn(s.author, "title-h3")}>{author}</h3>
+          <p className={cn(s.tourName, "text_small")}>Тур: {tourName}</p>
         </div>
-        <picture className={styles["author-photo-container"]}>
+        <picture className={s.authorPhotoContainer}>
           <Image
-            className={styles["author-photo"]}
+            className={s.authorPhoto}
             src={authorPhoto}
             alt="photo"
             fill
@@ -34,3 +33,10 @@ function ReviewCard({ reviewContent, author, authorPhoto, tourName }) {
 }
 
 export default ReviewCard;
+
+ReviewCard.propTypes = {
+  reviewContent: PropTypes.arrayOf(PropTypes.string).isRequired,
+  author: PropTypes.string.isRequired,
+  authorPhoto: PropTypes.string.isRequired,
+  tourName: PropTypes.string.isRequired,
+};

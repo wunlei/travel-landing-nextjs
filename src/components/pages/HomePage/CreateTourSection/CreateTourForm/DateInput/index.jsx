@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import cn from "classnames";
 import InputElement from "../Input";
-import styles from "./DateInput.module.scss";
+import s from "./DateInput.module.scss";
 
-const activeDateInputClass = styles["create-tour-form__input-date_has-value"];
+const activeDateInputClass = s.inputHasValue;
 
 function DateInput({
   label,
@@ -20,7 +21,7 @@ function DateInput({
       label={label}
       inputClasses={[
         cn(
-          styles["create-tour-form__input-date"],
+          s.inputDate,
           { [activeDateInputClass]: Boolean(value) },
           inputClasses,
         ),
@@ -32,3 +33,12 @@ function DateInput({
 }
 
 export default DateInput;
+
+DateInput.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  labelClasses: PropTypes.arrayOf(PropTypes.string),
+  inputClasses: PropTypes.arrayOf(PropTypes.string),
+  onChange: PropTypes.func.isRequired,
+};

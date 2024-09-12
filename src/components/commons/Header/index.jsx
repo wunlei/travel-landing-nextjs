@@ -2,53 +2,35 @@ import { useEffect, useState } from "react";
 import { useDebounce } from "@/hooks";
 import cn from "classnames";
 import Logo from "@/assets/icons/Logo.svg";
-import styles from "./Header.module.scss";
+import { navLinks } from "@/constants";
+import Paragraph from "../Paragraph/Paragraph";
+import List from "../List/List";
+import { HEADER_APPEAR_POSITION, HEADER_STATE } from "@/constants/Header";
+import s from "./Header.module.scss";
 
-const navLinks = [
-  {
-    href: "#tours",
-    title: "Туры",
-  },
-  {
-    href: "#create-tour",
-    title: "Создать тур",
-  },
-  {
-    href: "#reviews",
-    title: "Отзывы",
-  },
-  {
-    href: "#stories",
-    title: "Истории",
-  },
-];
-
-const headerStickyClass = styles["header_sticky"];
-const headerRemovedClass = styles["header_removed"];
-const HEADER_APPEAR_POSITION = 450;
+const headerStickyClass = s.headerSticky;
+const headerRemovedClass = s.headerRemoved;
 
 function Header() {
-  const [isShowed, setIsShowed] = useState(false);
-  const [isRemoved, setIsRemoved] = useState(false);
+  const [headerState, setHeaderState] = useState(HEADER_STATE.init);
 
   function handleScroll() {
     const currentPosition = window.scrollY;
 
     if (currentPosition > HEADER_APPEAR_POSITION) {
-      if (!isShowed) {
-        setIsShowed(true);
+      if (headerState !== HEADER_STATE.showed) {
+        setHeaderState(HEADER_STATE.showed);
       }
     } else {
-      if (isShowed) {
-        setIsRemoved(true);
+      if (headerState === HEADER_STATE.showed) {
+        setHeaderState(HEADER_STATE.hidden);
       }
     }
   }
 
   function handleAnimationEnd() {
-    if (isRemoved) {
-      setIsRemoved(false);
-      setIsShowed(false);
+    if (headerState === HEADER_STATE.hidden) {
+      setHeaderState(HEADER_STATE.init);
     }
   }
 
@@ -63,29 +45,29 @@ function Header() {
 
   return (
     <header
-      className={cn(styles["header"], {
-        [headerStickyClass]: isShowed,
-        [headerRemovedClass]: isRemoved,
+      className={cn(s.header, {
+        [headerStickyClass]: headerState === HEADER_STATE.showed,
+        [headerRemovedClass]: headerState === HEADER_STATE.hidden,
       })}
       onAnimationEnd={handleAnimationEnd}
     >
-      <div className={styles["content"]}>
-        <a href="#" className={styles["logo-container"]}>
-          <Logo className={styles["logo"]} />
+      <div className={s.content}>
+        <a href="#" className={s.logoContainer}>
+          <Logo className={s.logo} />
         </a>
-        <nav className={styles["page-nav"]}>
-          <ul className={cn("list", "text_normal", styles["page-nav__list"])}>
+        <nav className={s.pageNav}>
+          <List classnames={[s.navList]}>
             {navLinks.map((el) => (
               <li key={el.href}>
-                <a href={el.href} className={styles["page-nav__link"]}>
+                <a href={el.href} className={s.navLink}>
                   {el.title}
                 </a>
               </li>
             ))}
-          </ul>
+          </List>
         </nav>
-        <a href="tel:+79999999999" className={cn(styles["page-nav__link"])}>
-          <p className="text_normal">+7 999 999 99 99</p>
+        <a href="tel:+79999999999" className={s.navLink}>
+          <Paragraph>+7 999 999 99 99</Paragraph>
         </a>
       </div>
     </header>
